@@ -1,0 +1,22 @@
+
+public class ManejadorRutas {
+  
+  private Rutas[] vector;
+  
+  public ManejadorRutas() {
+    int tamaño = 9;
+    vector = new Rutas[tamaño];
+  }
+  
+  public ManejadorRutas(Rutas [] vector) {
+    this.vector = vector;
+  }
+  
+  public String toString (){
+    String hilera= "";
+    for( int i=0; i < vector.length; i++){
+      hilera+= vector [i]+ " ";
+    }
+    return hilera;
+  } 
+} // fin vectorRutas

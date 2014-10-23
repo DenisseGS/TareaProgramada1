@@ -1,0 +1,55 @@
+
+//package programadai;
+
+public class ManejadorPagoTarjeta {
+  
+  public Tarjeta [] vector1 ;
+  
+  public ManejadorPagoTarjeta() {
+    vector1 = new Tarjeta [5];
+  }
+  
+  public ManejadorPagoTarjeta(Tarjeta [] vector1) {
+    this.vector1 = vector1;
+  }  
+  
+  public String toString(){
+    String hilera= " ";
+    for (int i = 0; i <vector1.length; i++) {
+      hilera +=  vector1[i]+ " ";
+    }
+    hilera += "\n";
+    return hilera;
+  }
+  
+  public   void OrdenarLista() {
+    Tarjeta temp;
+    for(int i = 0; i < vector1.length -1; i++){
+      for(int j = 0; j < vector1.length -1; j++){
+        if((vector1[j] != null && vector1[j+1] != null) && vector1[j].getNumeroDeTarjeta() > vector1[j+1].getNumeroDeTarjeta()){
+          temp = vector1[j];
+          vector1[j] = vector1[j+1];
+          vector1[j+1] = temp;
+        }
+      }
+    }
+  }
+  
+  public boolean buscarBinarioNumero(float dato) {
+    int inicio = 0;
+    int fin = vector1.length - 1;
+    int actual;
+    while (inicio <= fin) {
+      actual = (inicio + fin) / 2;
+      if (vector1[actual].getNumeroDeTarjeta() == dato)
+        return true;
+      else if (vector1[actual].getNumeroDeTarjeta() < dato) {
+        inicio = actual + 1;
+      } else {
+        fin = actual - 1;
+      }
+    }
+    return false;
+  }
+  
+} // fin ManejadorPagoTarjeta
