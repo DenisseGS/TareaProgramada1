@@ -9,19 +9,19 @@ public abstract class Pasaje{
     this.tipoPago = tipoPago;
   }
   
-  public void setCantidadPasaje(int cantidadPasaje){
+  public void setCantidadPasaje(int cantidadPasaje) {
     this.cantidadPasaje = cantidadPasaje;
   }
   
-  public int getCantidadPasaje(){
+  public int getCantidadPasaje() {
     return cantidadPasaje;
   }
   
-  public void setTipoPago(double tipoPago){
+  public void setTipoPago(double tipoPago) {
     this.tipoPago = tipoPago;
   }
   
-  public double getTipoPago(){
+  public double getTipoPago() {
     return tipoPago;
   }
   

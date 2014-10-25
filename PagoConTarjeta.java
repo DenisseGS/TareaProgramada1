@@ -49,10 +49,10 @@ public class PagoConTarjeta implements Pago {
     return mensaje;
   }
   
-  public String tiquete(String tipo,String ruta, int hora){
+  public String tiquete(String tipo,String ruta, String hora,int contador){
     String hilera= " ";
     
-    hilera += "Transportes DELDU S.A " + "\nTipo de Transporte:  "+tipo+ "\nRuta:"+ ruta+ "\n Hora de salida"+ hora;
+    hilera += contador +"\n\nTransportes DELDU S.A " + "\nTipo de Transporte:  "+tipo+ "\nRuta:"+ ruta+ "\n Hora de salida"+ hora;
     
     hilera += "\n";
     

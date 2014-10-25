@@ -4,7 +4,7 @@
 import java.util.Calendar;
 public class Tarjeta {
   
-  int numeroDeTarjeta ;
+  float  numeroDeTarjeta ;
   private Calendar fechaExpiracion;
   String entidadEmprededora;
   double montoDisponible;
@@ -12,18 +12,18 @@ public class Tarjeta {
   public Tarjeta() {
   }
   
-  public Tarjeta(int numeroDeTarjeta, Calendar fechaExpiracion, String entidadEmprededora, double montoDisponible) {
+  public Tarjeta(float numeroDeTarjeta, Calendar fechaExpiracion, String entidadEmprededora, double montoDisponible) {
     this.numeroDeTarjeta = numeroDeTarjeta;
     this.fechaExpiracion = fechaExpiracion;
     this.entidadEmprededora = entidadEmprededora;
     this.montoDisponible = montoDisponible;
   }
   
-  public int getNumeroDeTarjeta() {
+  public float getNumeroDeTarjeta() {
     return numeroDeTarjeta;
   }
   
-  public void setNumeroDeTarjeta(int numeroDeTarjeta) {
+  public void setNumeroDeTarjeta(float numeroDeTarjeta) {
     this.numeroDeTarjeta = numeroDeTarjeta;
   }
   
@@ -52,6 +52,11 @@ public class Tarjeta {
   }
   
   public String toString() {
-    return "\nNumero de tarjeta"+ getNumeroDeTarjeta() ;
+    return "\nNumero de tarjeta" + getNumeroDeTarjeta() ;
   }
+  
+  
+    
+  
+    
 } // fin Tarjeta

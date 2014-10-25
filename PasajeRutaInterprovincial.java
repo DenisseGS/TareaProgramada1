@@ -12,27 +12,27 @@ public class PasajeRutaInterprovincial extends Pasaje {
     this.ruta = ruta;
   }
   
-  public void setFecha(String fecha){
+  public void setFecha(String fecha) {
     this.fecha = fecha;
   }
   
-  public String getFeha(){
+  public String getFeha() {
     return fecha;
   }
   
-  public void setHoraSalida(String horaSalida){
+  public void setHoraSalida(String horaSalida) {
     this.horaSalida = horaSalida;
   }
   
-  public String getHoraSalida(){
+  public String getHoraSalida() {
     return horaSalida;
   }
   
-  public void setRuta(RutasInterprovinciales ruta){
+  public void setRuta(RutasInterprovinciales ruta) {
     this.ruta = ruta;
   }
   
-  public RutasInterprovinciales getRuta(){
+  public RutasInterprovinciales getRuta() {
     return ruta;
   }
   

@@ -8,11 +8,11 @@ public class PasajeRutaPeriferia extends Pasaje {
     this.ruta = ruta;
   }
   
-  public void setRuta(RutasPeriferia ruta){
+  public void setRuta(RutasPeriferia ruta) {
     this.ruta = ruta;
   }
   
-  public RutasPeriferia getRuta(){
+  public RutasPeriferia getRuta() {
     return ruta;
   }
   

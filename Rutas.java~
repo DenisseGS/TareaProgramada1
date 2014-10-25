@@ -1,6 +1,6 @@
 
 public interface Rutas {
   
-  final double MONTO_RUTA = 0;
+  public abstract double montoRuta();
   
 } // Fin Rutas 

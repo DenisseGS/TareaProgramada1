@@ -10,19 +10,19 @@ public class PasajeRutaIntracapital extends Pasaje  {
     this.ruta = ruta;
   }
   
-  public void setRuta(Boolean cuidadanoDeOro){
+  public void setRuta(Boolean cuidadanoDeOro) {
     this.cuidadanoDeOro = cuidadanoDeOro;
   }
   
-  public Boolean getCuidadanoDeOro(){
+  public Boolean getCuidadanoDeOro() {
     return cuidadanoDeOro;
   }
   
-  public void setRuta(RutasIntracapitales ruta){
+  public void setRuta(RutasIntracapitales ruta) {
     this.ruta = ruta;
   }
   
-  public RutasIntracapitales getRuta(){
+  public RutasIntracapitales getRuta() {
     return ruta;
   }
   

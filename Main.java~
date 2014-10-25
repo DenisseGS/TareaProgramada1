@@ -1,12 +1,28 @@
 
+
+/**
+ * Universidad de Costa Rica
+ * IF-2000 Programación I
+ * Andrey Porras Rojas
+ * Alejandra Anchía  P.
+ * Denisse Gónzalez S.
+ * B30388
+ * B33029
+ * 06/10/14
+ *------------------------------------------------------------------------------
+ *Modificado por: <Alejandra Anchía  P,Denisse Gónzalez S>
+ * Fecha de modificación: <22/10/2014>
+ *------------------------------------------------------------------------------
+ *Recomendaciones que debe seguir si usted modifica este código:
+ * <.........>
+ */
+
 import java.util.Calendar;
 public class Main {
   
   public static void main(String[] args) {
-   
     
     Rutas[] vector = new Rutas[9];
-    
     
     vector[0] = new RutasInterprovinciales("San Jose", "Alajuela");
     vector[1] = new RutasInterprovinciales("Heredia", "Cartago");
@@ -17,12 +33,11 @@ public class Main {
     vector[6] = new RutasPeriferia("Mercado de San Jose");
     vector[7] = new RutasPeriferia("Parque Prospero Fernandez");
     vector[8] = new RutasPeriferia("Hospital de Heredia");
-    String hilera =" ";
+    
+    String hilera = " ";
     ManejadorRutas manejador = new ManejadorRutas(vector);
     GestorIO.mostrarMensaje(" " + manejador);
-   
-   
-  
+    
     Calendar fecha1 = Calendar.getInstance();
     fecha1.set(2019,10,22); //Los meses van de 0 a 11, luego 10 representa noviembre
     
@@ -51,9 +66,7 @@ public class Main {
     manejador1.OrdenarLista();
     manejador2.OrdenarLista();
     
-     
     GestorIO.mostrarMensaje("prueba" + manejador2);
- 
     
     Menu menu = new Menu();
     menu.desplegarMenu(); 

@@ -26,12 +26,12 @@ public class PagoEfectivoVentanilla implements Pago {
     if(getMontoPago()>=compra ){
       vuelto = getMontoPago()-compra; 
       condicion = true;
-     GestorIO.mostrarMensaje("Mensaje prueba:"+ mensaje(condicion,vuelto,compra));
+      GestorIO.mostrarMensaje("Mensaje prueba:"+ mensaje(condicion,vuelto,compra));
     }else{
       condicion =false;
       GestorIO.mostrarMensaje("Mensaje prueba:"+ mensaje(condicion,vuelto,compra));
-  }
-     return condicion;
+    }
+    return condicion;
   }
   
   public  String mensaje(boolean condicion,double vuelto,double compra){
@@ -47,12 +47,12 @@ public class PagoEfectivoVentanilla implements Pago {
     return hilera;
   }
   
-  public String tiquete(String tipo,String ruta, int hora){
+  public String tiquete(String tipo,String ruta, String hora,int contador){
     String hilera= " ";
-  
-      hilera += "\nTransportes DELDU S.A " + "\nTipo de Transporte:  "+tipo+ "\nRuta:"+ ruta+ "\n Hora de salida"+ hora;
     
-     hilera += "\n";
+    hilera += contador + "\n\nTransportes DELDU S.A " + "\nTipo de Transporte:  "+tipo+ "\nRuta:"+ ruta+ "\n Hora de salida"+ hora;
+    
+    hilera += "\n";
     
     return hilera;
   }

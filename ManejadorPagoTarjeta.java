@@ -13,16 +13,16 @@ public class ManejadorPagoTarjeta {
     this.vector1 = vector1;
   }  
   
-  public String toString(){
-    String hilera= " ";
-    for (int i = 0; i <vector1.length; i++) {
-      hilera +=  vector1[i]+ " ";
+  public String toString() {
+    String hilera = " ";
+    for (int i = 0; i < vector1.length; i++) {
+      hilera +=  vector1[i] + " ";
     }
     hilera += "\n";
     return hilera;
   }
   
-  public   void OrdenarLista() {
+  public void OrdenarLista() {
     Tarjeta temp;
     for(int i = 0; i < vector1.length -1; i++){
       for(int j = 0; j < vector1.length -1; j++){
