@@ -17,7 +17,7 @@ public class ManejadorCompraPasaje {
     String hilera= "";
     for( int i=0; i < vector.length; i++){
       hilera+= vector [i]+ " ";
-    }
+    }//fin del for 
     return hilera;
   } 
   

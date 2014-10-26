@@ -1,6 +1,4 @@
 
-//package programadai;
-
 import java.util.Calendar;
 public class Tarjeta {
   

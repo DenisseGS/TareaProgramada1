@@ -1,6 +1,4 @@
 
-//package programadai;
-
 public class PagoConTarjeta implements Pago {
   
   int numeroDeTarjeta ;
@@ -55,5 +53,5 @@ public class PagoConTarjeta implements Pago {
     hilera += contador + "\n\nTransportes DELDU S.A " + "\nTipo de Transporte:  " + tipo + "\nRuta: " + ruta + "\n Hora de salida: " + hora;
     hilera += "\n";
     return hilera;
-  } 
+  } //fin de tiquete
 } // fin PagoConTarjeta

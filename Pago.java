@@ -1,6 +1,4 @@
 
-
-
 public interface Pago {
   
   public boolean cobro(double compra);

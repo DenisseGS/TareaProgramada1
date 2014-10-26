@@ -35,23 +35,7 @@ public class GestorIO {
     }while(salir == false);
     return numero;
   }
-  
-  
-  public static int solicitarIntCom(String mensaje) {
-    int numero = 0;
-    boolean salir;
-    do{
-      salir = true;
-      try{    
-        numero = Integer.parseInt(JOptionPane.showInputDialog(null, mensaje));
-      }catch(Exception ex) {
-        mostrarMensajeError("Error digite de nuevo"); 
-        salir = false;
-      }
-    }while(salir == false);
-    return numero;
-  }
-  
+
   public static double solicitarDouble(String mensaje) {
     double numero = 0;
     boolean salir;
@@ -90,15 +74,4 @@ public class GestorIO {
     catch (Exception ex) {} //catch para el vacio
     return menu; //regresar variable menu
   } //fin metodo
-    
-  public static String mostrarMenu(String mensaje, String titulo, Rutas [] botones) { //inicio del metodo
-    String menu = "";//variable menu
-    try{//validar los espacios
-      menu = (String)JOptionPane.showInputDialog (null, mensaje, titulo, JOptionPane.QUESTION_MESSAGE, null, botones, botones[0]); //solicitud de variable
-    }//fin del try
-    catch (Exception ex) {} //catch para el vacio
-    return menu; //regresar variable menu
-  } //fin metodo
-  
-  
 } // }Fin clase GestorIO

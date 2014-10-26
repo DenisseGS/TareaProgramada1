@@ -3,7 +3,7 @@ public class RutasPeriferia implements Rutas {
   
   private String decripcionLugares;
   
-   public RutasPeriferia() {
+  public RutasPeriferia() {
   }
   
   public RutasPeriferia(String decripcionLugares) {

@@ -1,5 +1,6 @@
 
 public class Menu {
+  
   CreacionObjetos creacionObj = new CreacionObjetos();
   private final double DESCUENTO = 0.1;
   
@@ -67,10 +68,8 @@ public class Menu {
           continuar = false;
           break;  
       } // fin switch
-      
     } // fin while
   } // fin menu2
-  
   
   public void transporte(int opci){
     boolean continuar2 = true;
@@ -117,9 +116,7 @@ public class Menu {
       rutaMetroSinDescuen(tipoTrans,opci);
     }   
   }// fin del tipo Transporte
-  
-  
-  
+
   public void rutaTren(int tipoTrans,int opci){
     String hora = " ";
     int eleccion= 0;
@@ -189,17 +186,16 @@ public class Menu {
     CreacionObjetos obj = new CreacionObjetos();
     obj.crearRuta(); 
     boolean condicion4= true;
-     while(condicion4== true){
-       String ruta2=ManejadorRutas.desplegarRutasPerif();
-       eleccion2= GestorIO.solicitarInt(ruta2);
+    while(condicion4== true){
+      String ruta2=ManejadorRutas.desplegarRutasPerif();
+      eleccion2= GestorIO.solicitarInt(ruta2);
       if((eleccion2==6)||(eleccion2==7)||(eleccion2==8)){
         condicion4= false;
       }else{
         condicion4= true;
       }
-      }
-      String rutaSeleciondad2=ManejadorRutas.vector[eleccion2].toString();
-    
+    }
+    String rutaSeleciondad2=ManejadorRutas.vector[eleccion2].toString();
     hora= creacionObj.mostrar();
     int cantidad = GestorIO.solicitarInt("Digite la cantidad de pasajes que desea reservar");
     RutasPeriferia peri = new RutasPeriferia();
@@ -207,8 +203,7 @@ public class Menu {
     tipoPago(compra,cantidad,"Metro",hora,opci,rutaSeleciondad2);
     
   }
-  
-  
+
   public void rutaMetroSinDescuen(int tipoTrans,int opci){
     String hora = " ";
     int eleccion2= 0;
@@ -217,26 +212,25 @@ public class Menu {
     obj.crearRuta();
     while(condicion== true){
       String ruta2=ManejadorRutas.desplegarRutasPerif();
-       eleccion2= GestorIO.solicitarInt(ruta2);
+      eleccion2= GestorIO.solicitarInt(ruta2);
       if((eleccion2==6)||(eleccion2==7)||(eleccion2==8)){
         condicion= false;
       }else{
         condicion= true;
       }
-      }//fin del while
+    }//fin del while
     String rutaSeleciondad2=ManejadorRutas.vector[eleccion2].toString();
     hora= creacionObj.mostrar();
     int cantidad = GestorIO.solicitarInt("Digite la cantidad de pasajes que desea reservar");
     RutasPeriferia peri = new RutasPeriferia();
     double compra = cantidad *peri.montoRuta();
-    tipoPago(compra,cantidad,"Metro",hora,opci,rutaSeleciondad2);
     
+    tipoPago(compra,cantidad,"Metro",hora,opci,rutaSeleciondad2);  
   }
   
   public  void tipoPago(double compra,int cantidad,String tipo,String hora,int opci,String ruta){
     boolean continuar= true;
     int pago =0;
-    
     while (continuar == true){
       if(opci == 2){
         pago =2;
@@ -252,8 +246,6 @@ public class Menu {
       switch (pago) {
         
         case 1:
-          
-          
           double montoPago = GestorIO.solicitarDouble("Digite el monto de pago");
           PagoEfectivoVentanilla pagoEfectivo = new PagoEfectivoVentanilla(montoPago);
           boolean condicion= pagoEfectivo.cobro(compra);
@@ -268,11 +260,32 @@ public class Menu {
           break;
           
         case 2:
+          ManejadorPagoTarjeta pagoTarje= new ManejadorPagoTarjeta();
           float numTarjeta = GestorIO.solicitarFloat("Digite el Número de tarjeta");
-          String fecha = GestorIO.solicitarString( "Digite la fecha de Expiración ");
+          boolean validez= false;
+          String fecha =" ";
+          while(validez == false){
+            fecha = GestorIO.solicitarString( "Digite la fecha de Expiración ");
+            validez= pagoTarje.validarIngresoFecha (fecha);
+          }  
           String entidad= GestorIO.solicitarString( "Digite la entidad expendedora ");
-          // GestorIO.mostrarMensaje( miMain.getManejador());
-          //GestorIO.mostrarMensaje("buscar" + manejador.buscarBinarioNumero(5046270600087498f));
+          // GestorIO.mostrarMensaje( "fecha valida "+validez);
+          GestorIO.mostrarMensaje("buscar" + pagoTarje.buscarBinarioNumero(numTarjeta));
+          boolean condicion7=  pagoTarje.validarExpiracion(fecha);
+          PagoConTarjeta pagoConTarjeta = new PagoConTarjeta();
+          if(condicion7== false){
+            GestorIO.mostrarMensaje( "La tarjeta esta vencida");
+          }else{
+            boolean condicion4= pagoConTarjeta.cobro(compra);
+            
+            if(condicion4 == true){
+              for(int i =0; i<cantidad;i++){
+                contador++;
+                GestorIO.mostrarMensaje(pagoConTarjeta.tiquete(tipo,ruta, hora,contador));
+              }
+            }
+          }
+          
           break;
           
         case 3 :
@@ -280,87 +293,85 @@ public class Menu {
           String dinero = "";
           int eleccion2 = 0;
           GestorIO.mostrarMensaje("El monto a pagar es:"+compra);
-           double montoPago2=0.0;
+          double montoPago2=0.0;
           while(montoPago2 < compra){
-          dinero = "BILLETES: \n" + cobroElectronico.devolverBillete() + "\n\nMONEDAS: \n" + cobroElectronico.devolverMonedas();
-          eleccion2 = GestorIO.solicitarInt(dinero);
-          if(eleccion2 == 1) {
-            int enu1 = billete1.getBillete();
-            montoPago2 += enu1;
-            System.out.println("" + enu1);
-          }
-          
-          if(eleccion2 == 2) {
-            int enu2 = billete2.getBillete();
-             montoPago2 += enu2;
-            System.out.println("" + enu2);
-          }
-          
-          if(eleccion2 == 3) {
-            int enu3 = billete3.getBillete();
-             montoPago2 += enu3;
-            System.out.println("" + enu3);
-          }
-          
-          if(eleccion2 == 4) {
-            int enu4 = billete4.getBillete();
-             montoPago2 += enu4;
-            System.out.println("" + enu4);
-          }
-          
-          if(eleccion2 == 5) {
-            int enu5 = billete5.getBillete();
-             montoPago2 += enu5;
-            System.out.println("" + enu5);
-          }
-        
-          if(eleccion2 == 6) {
-            int enu6 = moneda1.getMoneda();
-             montoPago2 += enu6;
-            System.out.println("" + enu6);
-          }
-          
-          if(eleccion2 == 7) {
-            int enu7 = moneda2.getMoneda();
-             montoPago2 +=enu7; 
-            System.out.println("" + enu7);
-          }
-          
-          if(eleccion2 == 8) {
-            int enu8 = moneda3.getMoneda();
-             montoPago2 += enu8;
-            System.out.println("" + enu8);
-          }
-          
-          if(eleccion2 == 9) {
-            int enu9 = moneda4.getMoneda();
-             montoPago2 += enu9;
-            System.out.println("" + enu9);
-          }
-          
-          if(eleccion2 == 10) {
-            int enu10 = moneda5.getMoneda();
-             montoPago2 += enu10;
-            System.out.println("" + enu10);
-          }
-          
+            dinero = "BILLETES: \n" + cobroElectronico.devolverBillete() + "\n\nMONEDAS: \n" + cobroElectronico.devolverMonedas();
+            eleccion2 = GestorIO.solicitarInt(dinero);
+            if(eleccion2 == 1) {
+              int enu1 = billete1.getBillete();
+              montoPago2 += enu1;
+              System.out.println("" + enu1);
+            }
+            
+            if(eleccion2 == 2) {
+              int enu2 = billete2.getBillete();
+              montoPago2 += enu2;
+              System.out.println("" + enu2);
+            }
+            
+            if(eleccion2 == 3) {
+              int enu3 = billete3.getBillete();
+              montoPago2 += enu3;
+              System.out.println("" + enu3);
+            }
+            
+            if(eleccion2 == 4) {
+              int enu4 = billete4.getBillete();
+              montoPago2 += enu4;
+              System.out.println("" + enu4);
+            }
+            
+            if(eleccion2 == 5) {
+              int enu5 = billete5.getBillete();
+              montoPago2 += enu5;
+              System.out.println("" + enu5);
+            }
+            
+            if(eleccion2 == 6) {
+              int enu6 = moneda1.getMoneda();
+              montoPago2 += enu6;
+              System.out.println("" + enu6);
+            }
+            
+            if(eleccion2 == 7) {
+              int enu7 = moneda2.getMoneda();
+              montoPago2 +=enu7; 
+              System.out.println("" + enu7);
+            }
+            
+            if(eleccion2 == 8) {
+              int enu8 = moneda3.getMoneda();
+              montoPago2 += enu8;
+              System.out.println("" + enu8);
+            }
+            
+            if(eleccion2 == 9) {
+              int enu9 = moneda4.getMoneda();
+              montoPago2 += enu9;
+              System.out.println("" + enu9);
+            }
+            
+            if(eleccion2 == 10) {
+              int enu10 = moneda5.getMoneda();
+              montoPago2 += enu10;
+              System.out.println("" + enu10);
+            }
           }//fin del while
-        
-         cobroElectronico.setMontoPago(montoPago2);
+          cobroElectronico.setMontoPago(montoPago2);
           boolean condicion2 = cobroElectronico.cobro(compra);
           if(condicion2 == true){
             for(int i = 0; i < cantidad; i++){
               contador++;
               GestorIO.mostrarMensaje(cobroElectronico.tiquete(tipo, ruta, hora, contador));
             }
-          }
+          }// fin del if
+          break;
           
         case 4:
           continuar = false;
           break;          
           
       }// fin de switch 
-    }// fin del while
+    }// fin del while  
   }// fin de tipo de pago 
-  
 }// fin Menu

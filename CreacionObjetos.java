@@ -1,8 +1,7 @@
 
 import java.util.Calendar;
 
-public class CreacionObjetos{
- 
+public class CreacionObjetos {
   
   public String mostrar() {
     String [] horas ={"6:00 am","7:00 am","8:00 am","9:00 am","10:00 am","11:00 am","12:00 pm","1:00 pm",
@@ -12,9 +11,8 @@ public class CreacionObjetos{
     return hilera;
   }
   
-  
-   public void crearRuta(){
-       Rutas[] vector = new Rutas[9];  
+  public void crearRuta() {
+    Rutas[] vector = new Rutas[9];  
     vector[0] = new RutasInterprovinciales("San Jose", "Alajuela");
     vector[1] = new RutasInterprovinciales("Heredia", "Cartago");
     vector[2] = new RutasInterprovinciales("Guanacaste", "Puntarenas");
@@ -27,16 +25,16 @@ public class CreacionObjetos{
     
     String hilera = " ";
     ManejadorRutas manejador = new ManejadorRutas(vector);
-   
-   
-   }
-    
-   
-    public void crearVector(){
-      Calendar fecha1 = Calendar.getInstance();
-    fecha1.set(2019,10,22); //Los meses van de 0 a 11, luego 10 representa noviembre
+  }
   
-   
+  public void crearPasaje() {
+    Pasaje[] vector= new Pasaje[120];
+  }
+  
+  public void crearVector() {
+    Calendar fecha1 = Calendar.getInstance();
+    fecha1.set(2019,10,22); //Los meses van de 0 a 11, luego 10 representa noviembre
+    
     Tarjeta [] vector1 = new Tarjeta[5];
     vector1 [0] = new Tarjeta(5046270600087498f, fecha1, "Visa", 20000);
     fecha1.set(2020, 10, 22);
@@ -60,10 +58,5 @@ public class CreacionObjetos{
     ManejadorPagoTarjeta manejador2 = new ManejadorPagoTarjeta(vector2);
     manejador1.OrdenarLista();
     manejador2.OrdenarLista();
-    
-   // GestorIO.mostrarMensaje("prueba" + manejador2);
-    }
-    
-    
-  
+  }
 } // fin CreacionObjetos

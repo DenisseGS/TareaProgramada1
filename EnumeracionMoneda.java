@@ -1,5 +1,5 @@
 
-public enum EnumeracionMoneda implements Dinero {
+public enum EnumeracionMoneda {
   
   DIEZ(10, "colones"), VEINTICINCO(25, "colones"), CINCUENTA(50, "colones"), CIEN(100, "colones"), QUINIENTOS(500, "colones");
   

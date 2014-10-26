@@ -22,7 +22,7 @@ public class ManejadorRutas {
   
   public  String seleccionarRuta() {
     String hilera = " ";
-    hilera = GestorIO.mostrarMenu("RUTAS", "RUTAS",vector);    
+    //hilera = GestorIO.mostrarMenu("RUTAS", "RUTAS",vector);    
     return hilera;
   }
   
@@ -50,7 +50,6 @@ public class ManejadorRutas {
     return hilera;
   }// fin de desplegarRutasIntraCapi
   
-  
   public static String desplegarRutasPerif(){
     String hilera = " ";
     
@@ -63,6 +62,4 @@ public class ManejadorRutas {
     }// fin del for
     return hilera;                     
   }//fin de desplegarRutasPerif
-  
-  
 } // fin vectorRutas

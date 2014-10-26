@@ -1,5 +1,5 @@
 
-public enum EnumeracionBillete implements Dinero {
+public enum EnumeracionBillete {
   
   MIL(1000, "colones"), DOSMIL(2000, "colones"), CINCOMIL(5000, "colones"), DIEZMIL(10000, "colones"), VEINTEMIL(20000, "colones");
   
@@ -18,15 +18,4 @@ public enum EnumeracionBillete implements Dinero {
   public String getTipo() {
     return tipo;
   }
-//  
-//  public int valueOf(int opc) {
-//    int noo = 0;
-//    if(MIL.valueOf(opc)==( MIL.getBillete())) {
-//      System.out.println("Cadena UNO");
-//      noo = 1;
-//      
-//    }
-//    return noo;
-//  }
-  
 } // fin EnumeracionBillete

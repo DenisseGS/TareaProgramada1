@@ -1,6 +1,4 @@
 
-//package programadai;
-
 public class PagoEfectivoVentanilla implements Pago {
   
   private double montoPago;
@@ -42,7 +40,6 @@ public class PagoEfectivoVentanilla implements Pago {
     }else{
       hilera = "\nLo sentimos, la compra no se puede realizar " + 
         "\nFondos insuficientes";
-      //// AGREGAR 
     }
     return hilera;
   }

@@ -1,12 +1,13 @@
 
-//package programadai;
 import java.text.SimpleDateFormat;  
-import java.text.ParseException;  
-  
+import java.text.ParseException;
+import java.util.Date;
+
 
 public class ManejadorPagoTarjeta {
   
-  public Tarjeta [] vector1 ;
+  
+  public static Tarjeta [] vector1 ;
   
   public ManejadorPagoTarjeta() {
     vector1 = new Tarjeta [5];
@@ -38,7 +39,7 @@ public class ManejadorPagoTarjeta {
     }
   }
   
-  public boolean buscarBinarioNumero(float dato) {
+  public static boolean buscarBinarioNumero(float dato) {
     int inicio = 0;
     int fin = vector1.length - 1;
     int actual;
@@ -55,19 +56,13 @@ public class ManejadorPagoTarjeta {
     return false;
   }// fin de buscarBinarioNumero
   
-
-  public boolean validarFecha(String fecha) {  
-    
+  public boolean validarIngresoFecha(String fecha) {  
     if (fecha == null)  
       return false;  
-    
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
-    
     if (fecha.trim().length() != dateFormat.toPattern().length())  
       return false;  
-    
     dateFormat.setLenient(false);  
-    
     try {  
       dateFormat.parse(fecha.trim());  
     }  
@@ -76,5 +71,38 @@ public class ManejadorPagoTarjeta {
     }  
     return true;  
   }  
+  
+  public boolean validarExpiracion( String fecha1){
+    ManejadorPagoTarjeta objetoPrincipal = new ManejadorPagoTarjeta();
+    Date fechaActual = new Date();
+    SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
+    String fechaSistema=formateador.format(fechaActual);
+    boolean esValida= objetoPrincipal.compararFechasConDate(fecha1,fechaSistema);
+    System.out.println(esValida+"\n");
+    return esValida;
+  }
 
+  private boolean compararFechasConDate(String fecha1, String fechaActual) {  
+    boolean resultado= false;
+    try {
+      /**Obtenemos las fechas enviadas en el formato a comparar*/
+      SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy"); 
+      Date fechaDate1 = formateador.parse(fecha1);
+      Date fechaDate2 = formateador.parse(fechaActual);
+      
+      if ( fechaDate1.before(fechaDate2) ){
+        resultado= false;
+      }else{
+        if ( fechaDate2.before(fechaDate1) ){
+          resultado=true;
+        }else{
+          resultado= true;
+        } 
+      }
+    } catch (ParseException e) {
+      System.out.println("Se Produjo un Error!!!  "+e.getMessage());
+    }  
+    return resultado;
+  }
+  
 } // fin ManejadorPagoTarjeta
