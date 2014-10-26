@@ -53,10 +53,5 @@ public class Tarjeta {
   
   public String toString() {
     return "\nNumero de tarjeta" + getNumeroDeTarjeta() ;
-  }
-  
-  
-    
-  
-    
+  }  
 } // fin Tarjeta

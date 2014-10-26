@@ -1,5 +1,5 @@
 
-//package programadai;
+
 
 public interface Pago {
   

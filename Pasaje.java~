@@ -1,5 +1,5 @@
 
-public abstract class Pasaje {
+public abstract class Pasaje{
   
   private int cantidadPasaje;
   private double tipoPago;
@@ -27,5 +27,5 @@ public abstract class Pasaje {
   
   public String toString() {
     return  "\nCantidad de pasajes: " + cantidadPasaje + "\nTipo de pago: " + tipoPago;
-  }   
+  } 
 } // fin Pasaje

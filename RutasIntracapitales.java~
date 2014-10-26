@@ -30,6 +30,6 @@ public class RutasIntracapitales implements Rutas {
   }
   
   public String toString() {
-    return "Sector de Origen: " + sectorOrigen + "\nSector de Destino: " + sectorDestino;
+    return "Sector de Origen: " + sectorOrigen + "\nSector de Destino: " + sectorDestino + "\nMonto de la Ruta: " + montoRuta();
   } 
 } // Fin RutasIntracapitales

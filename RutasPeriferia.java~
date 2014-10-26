@@ -4,6 +4,7 @@ public class RutasPeriferia implements Rutas {
   private String decripcionLugares;
   
    public RutasPeriferia() {
+    
   }
   
   public RutasPeriferia(String decripcionLugares) {
@@ -23,6 +24,6 @@ public class RutasPeriferia implements Rutas {
   }
   
   public String toString() {
-    return "Descripción del Recorrido: " + decripcionLugares;
+    return "Descripción del Recorrido: " + decripcionLugares + "\nMonto de la Ruta: " + montoRuta();
   } 
 } // Fin RutasInterprovinciales

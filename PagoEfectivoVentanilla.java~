@@ -23,7 +23,7 @@ public class PagoEfectivoVentanilla implements Pago {
   public boolean cobro(double compra) {
     boolean condicion = true;
     double vuelto = 0;
-    if(getMontoPago() >= compra ){
+    if(getMontoPago()>=compra ){
       vuelto = getMontoPago()-compra; 
       condicion = true;
       GestorIO.mostrarMensaje("Mensaje prueba:" + mensaje(condicion, vuelto, compra));

@@ -69,10 +69,20 @@ public class GestorIO {
   public static String mostrarMenu(String mensaje, String titulo, String [] botones) { //inicio del metodo
     String menu = "";//variable menu
     try{//validar los espacios
+      menu = (String)JOptionPane.showInputDialog (null, mensaje, titulo, JOptionPane.QUESTION_MESSAGE, null, botones, botones[0]); //solicitud de variable 
+    }//fin del try
+    catch (Exception ex) {} //catch para el vacio
+    return menu; //regresar variable menu
+  } //fin metodo
+    
+  public static String mostrarMenu(String mensaje, String titulo, Rutas [] botones) { //inicio del metodo
+    String menu = "";//variable menu
+    try{//validar los espacios
       menu = (String)JOptionPane.showInputDialog (null, mensaje, titulo, JOptionPane.QUESTION_MESSAGE, null, botones, botones[0]); //solicitud de variable
     }//fin del try
     catch (Exception ex) {} //catch para el vacio
     return menu; //regresar variable menu
   } //fin metodo
+  
   
 } // }Fin clase GestorIO

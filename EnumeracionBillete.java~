@@ -18,15 +18,4 @@ public enum EnumeracionBillete implements Dinero {
   public String getTipo() {
     return tipo;
   }
-//  
-//  public int valueOf(int opc) {
-//    int noo = 0;
-//    if(MIL.valueOf(opc)==( MIL.getBillete())) {
-//      System.out.println("Cadena UNO");
-//      noo = 1;
-//      
-//    }
-//    return noo;
-//  }
-  
 } // fin EnumeracionBillete

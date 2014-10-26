@@ -27,9 +27,9 @@ public class CreacionObjetos{
     
     String hilera = " ";
     ManejadorRutas manejador = new ManejadorRutas(vector);
-    GestorIO.mostrarMensaje(" " + manejador);
-                manejador.seleccionarRuta();
-  }
+   
+   
+   }
     
    
     public void crearVector(){
@@ -61,7 +61,7 @@ public class CreacionObjetos{
     manejador1.OrdenarLista();
     manejador2.OrdenarLista();
     
-    GestorIO.mostrarMensaje("prueba" + manejador2);
+   // GestorIO.mostrarMensaje("prueba" + manejador2);
     }
     
     

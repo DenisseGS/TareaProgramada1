@@ -11,7 +11,7 @@ public enum EnumeracionMoneda implements Dinero {
     this.tipo = tipo;
   }
   
-  public int getMoneda() {
+  public double getMoneda() {
     return moneda;
   }
   

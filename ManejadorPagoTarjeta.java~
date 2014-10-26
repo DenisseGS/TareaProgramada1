@@ -1,8 +1,5 @@
 
 //package programadai;
-import java.text.SimpleDateFormat;  
-import java.text.ParseException;  
-  
 
 public class ManejadorPagoTarjeta {
   
@@ -56,25 +53,5 @@ public class ManejadorPagoTarjeta {
   }// fin de buscarBinarioNumero
   
 
-  public boolean validarFecha(String fecha) {  
-    
-    if (fecha == null)  
-      return false;  
-    
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
-    
-    if (fecha.trim().length() != dateFormat.toPattern().length())  
-      return false;  
-    
-    dateFormat.setLenient(false);  
-    
-    try {  
-      dateFormat.parse(fecha.trim());  
-    }  
-    catch (ParseException pe) {  
-      return false;  
-    }  
-    return true;  
-  }  
 
 } // fin ManejadorPagoTarjeta
